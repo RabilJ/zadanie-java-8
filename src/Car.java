@@ -14,26 +14,29 @@ public class Car extends Vehicle {
         this.airConditioning = airConditioning;
     }
 
-    public void setACOn(){
+    public void setACOn() {
         setAirConditioning(true);
     }
-    public void setACOFF(){
+
+    public void setACOFF() {
         setAirConditioning(false);
     }
-    public String isACON(boolean AC){
-        if(AC == true){
-            return"Włączona";
-        }else{
+
+    public String isACON(boolean AC) {
+        if (AC) {
+            return "Włączona";
+        } else {
             return "Wyłączona";
         }
     }
-    public double vehicleRange(){
+
+    public double vehicleRange() {
         double range = 0;
-        if(getAirConditioning()==true){
-            range = 100*(getCapacity()/(getFuelUsagePer100()+0.8));
+        if (getAirConditioning()) {
+            range = 100 * (getCapacity() / (getFuelUsagePer100() + 0.8));
             return range;
-        }else{
-            range = 100*(getCapacity()/(getFuelUsagePer100()));
+        } else {
+            range = 100 * (getCapacity() / (getFuelUsagePer100()));
             return range;
         }
 
@@ -42,6 +45,6 @@ public class Car extends Vehicle {
     @Override
     public String toString() {
 
-        return super.toString()+"\n"+"Klimatyzacja: "+isACON(getAirConditioning());
+        return super.toString() + "\n" + "Klimatyzacja: " + isACON(getAirConditioning());
     }
 }

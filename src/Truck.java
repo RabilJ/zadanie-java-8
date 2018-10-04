@@ -32,17 +32,17 @@ public class Truck extends Car {
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+"Waga ładunku: "+getLoadWeight()+"kg";
+        return super.toString() + "\n" + "Waga ładunku: " + getLoadWeight() + "kg";
     }
+
     @Override
-    public double vehicleRange(){
-        super.vehicleRange();
+    public double vehicleRange() {
         double range = 0;
-        if(getAirConditioning()==true){
-            range = 100*(getCapacity()/(getFuelUsagePer100()+((getLoadWeight()/100)*0.5)+1.6));
+        if (getAirConditioning()) {
+            range = 100 * (getCapacity() / (getFuelUsagePer100() + ((getLoadWeight() / 100) * 0.5) + 1.6));
             return range;
-        }else{
-            range = 100*(getCapacity()/(getFuelUsagePer100()+((getLoadWeight()/100)*0.5)));
+        } else {
+            range = 100 * (getCapacity() / (getFuelUsagePer100() + ((getLoadWeight() / 100) * 0.5)));
             return range;
         }
     }
